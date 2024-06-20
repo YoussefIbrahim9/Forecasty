@@ -303,6 +303,9 @@ locationInput.addEventListener("input",function(){
 locationSearch.addEventListener("click",function(){
     var countryInputValue = locationInput.value;
     getDataFromApi(countryInputValue);
+    locationInput.value = "";
+
+
 })
 
 
