@@ -1,0 +1,39 @@
+@media (min-width:992px) {
+    nav .container .navbar-collapse .navbar-nav{
+        width: 60%;
+        justify-content: space-evenly;
+    }
+}
+
+@media (min-width:768px) {
+    .input-group {
+        width: 60%;
+    }
+
+
+    
+}
+
+@media (max-width:767px) {
+    .input-group{
+        width: 85%;
+    }
+    .footer-container footer .container .input-group{
+        width: 100%;
+    }
+    
+}
+
+@media (max-width:485px) {
+    .current-degree{
+        font-size: 70px !important;
+    }
+    .windandhumadity{
+        font-size: smaller;
+    }
+    .bttm-50{
+        bottom: 18px;
+    }
+
+    
+}
