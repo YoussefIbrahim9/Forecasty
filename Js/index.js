@@ -66,6 +66,8 @@ var sixthHourCondition = document.getElementById("sixthNextHourCondition")
 var fakeString;
 var numbeOfSpaces;
 
+var homeBody = document.getElementById("bodyHomePage")
+
 var finalDataGlobalVar;
 
 // functions
@@ -280,7 +282,10 @@ async function getDataFromApi(targetedCountry){
         displayHourlyWeather();
     }
     catch(error){
-        console.log("Cant find the city");
+        homeBody.innerHTML = `<div class="alert alert-danger" role="alert">
+                                Can't fetch the data, try again later
+                                </div>
+                            `
     }
 
 }

@@ -130,3 +130,14 @@ nav .container .navbar-collapse .navbar-nav li a{
     font-size: 25px;
     margin: 15px;
 }
+
+.alert.alert-danger{
+    position: relative;
+    top: 90px;
+    height: 150px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

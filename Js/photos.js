@@ -1,16 +1,26 @@
 var photosDisplay = document.getElementById("displayPhotos")
 
+var photosBody = document.getElementById("bodyOfPhotos");
 var photos;
 
 var currentCity = sessionStorage.getItem("targeted-City")
 
 async function getPhotosData(currentCity){
-   var photosReponse = await fetch(`https://api.unsplash.com/search/photos?query=${currentCity}&client_id=h5p6PcBwfM7YMaHA8D-X4ZPI02n_OjaojRi7YfNTqrc`)
-   var finalPhotos = await photosReponse.json();
+    try{
+        var photosReponse = await fetch(`https://api.unsplash.com/search/photos?query=${currentCity}&client_id=h5p6PcBwfM7YMaHA8D-X4ZPI02n_OjaojRi7YfNTqrc`)
+        var finalPhotos = await photosReponse.json();
+     
+        
+        photos = finalPhotos;
+        dispalyPhotosInRow();
+    }
+    catch(error){
+        photosBody.innerHTML = `<div class="alert alert-danger" role="alert">
+                                Can't fetch the data, try again later
+                                </div>
+                            `
+    }
 
-   
-   photos = finalPhotos;
-   dispalyPhotosInRow();
 }
 
 function dispalyPhotosInRow(){
