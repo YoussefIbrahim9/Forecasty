@@ -66,7 +66,6 @@ var sixthHourCondition = document.getElementById("sixthNextHourCondition")
 var fakeString;
 var numbeOfSpaces;
 
-var homeBody = document.getElementById("bodyHomePage")
 
 var finalDataGlobalVar;
 
@@ -271,6 +270,8 @@ async function getDataFromApi(targetedCountry){
         finalDataGlobalVar = finalData;
 
         sessionStorage.setItem("targeted-City",finalDataGlobalVar.location.name);
+
+        console.log(finalData)
     
         // display current forecast
         displayCurrentWeather();
@@ -282,10 +283,7 @@ async function getDataFromApi(targetedCountry){
         displayHourlyWeather();
     }
     catch(error){
-        homeBody.innerHTML = `<div class="alert alert-danger" role="alert">
-                                Can't fetch the data, try again later
-                                </div>
-                            `
+        console.log("Can't fetch files")
     }
 
 }

@@ -1,6 +1,5 @@
 var photosDisplay = document.getElementById("displayPhotos")
 
-var photosBody = document.getElementById("bodyOfPhotos");
 var photos;
 
 var currentCity = sessionStorage.getItem("targeted-City")
@@ -15,10 +14,7 @@ async function getPhotosData(currentCity){
         dispalyPhotosInRow();
     }
     catch(error){
-        photosBody.innerHTML = `<div class="alert alert-danger" role="alert">
-                                Can't fetch the data, try again later
-                                </div>
-                            `
+        console.log("Can't fetch files")
     }
 
 }
